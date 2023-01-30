@@ -56,6 +56,8 @@ const ExpenseForm = (props) => {
     
   };
 
+  var today = new Date(),
+            date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   return (
     <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
@@ -82,7 +84,7 @@ const ExpenseForm = (props) => {
           <input
             type='date'
             min='2019-01-01'
-            max='2022-12-31'
+            max={date}
             value={enteredDate}
             onChange={dateChangeHandler}
           />
